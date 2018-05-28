@@ -3,7 +3,7 @@
   Copyright (C) 2004-2008 Tord Romstad (Glaurung author)
   Copyright (C) 2008-2015 Marco Costalba, Joona Kiiski, Tord Romstad
   Copyright (C) 2015-2017 Marco Costalba, Joona Kiiski, Gary Linscott, Tord Romstad
-  Copyright (C) 2014-2017 Kazuyuki Kawabata
+  Copyright (C) 2014-2018 Kazuyuki Kawabata
 
   Nanoha is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -958,12 +958,14 @@ inline int conv_sq2z(int sq)
 #if defined(_MSC_VER)
 
 #elif defined(__GNUC__)
+#if 0  // MSYS2のgcc/clangでは定義済みでエラーになるため、削除(古い環境(?)で必要？？)
 inline unsigned char _BitScanForward(unsigned long * Index, unsigned long Mask)
 {
 	if (Mask == 0) return 0;
 	*Index = static_cast<unsigned long>(__builtin_ctz(Mask));
 	return 1;
 }
+#endif
 
 #define __assume(x)		// MS のコンパイラのコード生成のヒントだが、gccでは無効なため
 

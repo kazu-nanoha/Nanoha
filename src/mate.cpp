@@ -3,7 +3,7 @@
   Copyright (C) 2004-2008 Tord Romstad (Glaurung author)
   Copyright (C) 2008-2015 Marco Costalba, Joona Kiiski, Tord Romstad
   Copyright (C) 2015-2017 Marco Costalba, Joona Kiiski, Gary Linscott, Tord Romstad
-  Copyright (C) 2014-2017 Kazuyuki Kawabata
+  Copyright (C) 2014-2018 Kazuyuki Kawabata
 
   Nanoha is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@
 #include <cstdio>
 #include "movegen.h"
 #include "position.h"
+#include "thread.h"		// gcc/clangで_BitScanForwardを有効にする.
 
 #define USE_M3HASH	// Mate3()結果をハッシュする.
 

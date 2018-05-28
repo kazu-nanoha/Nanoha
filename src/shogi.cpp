@@ -3,7 +3,7 @@
   Copyright (C) 2004-2008 Tord Romstad (Glaurung author)
   Copyright (C) 2008-2015 Marco Costalba, Joona Kiiski, Tord Romstad
   Copyright (C) 2015-2017 Marco Costalba, Joona Kiiski, Gary Linscott, Tord Romstad
-  Copyright (C) 2014-2017 Kazuyuki Kawabata
+  Copyright (C) 2014-2018 Kazuyuki Kawabata
 
   Nanoha is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -31,6 +31,7 @@
 #include "tt.h"
 #include "book.h"
 #include "uci.h"
+#include "thread.h"		// gcc/clangで_BitScanForwardを有効にする.
 
 // x が定数のときの絶対値(プリプロセッサレベルで確定するので…)
 #define ABS(x)	((x) > 0 ? (x) : -(x))

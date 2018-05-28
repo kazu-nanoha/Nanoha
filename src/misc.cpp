@@ -3,7 +3,7 @@
   Copyright (C) 2004-2008 Tord Romstad (Glaurung author)
   Copyright (C) 2008-2015 Marco Costalba, Joona Kiiski, Tord Romstad
   Copyright (C) 2015-2017 Marco Costalba, Joona Kiiski, Gary Linscott, Tord Romstad
-  Copyright (C) 2014-2017 Kazuyuki Kawabata
+  Copyright (C) 2014-2018 Kazuyuki Kawabata
 
   Nanoha is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -56,13 +56,13 @@ const string DefaultAppName = "NanohaNano";
 #elif defined(EVAL_MINI)
 const string DefaultAppName = "NanohaMini";
 #elif defined(EVAL_APERY)
-const string DefaultAppName = "NanohaWCSC27A";
+const string DefaultAppName = "NanohaWCSC28A";
 #elif defined(EVAL_TWIG)
-const string DefaultAppName = "NanohaWCSC27U";
+const string DefaultAppName = "NanohaWCSC28U";
 #else
 #error EVAL Type
 #endif
-const string DefaultEngineVersion = "0.8.1";
+const string DefaultEngineVersion = "0.8.2";
 
 string AppName = DefaultAppName;
 string EngineVersion = DefaultEngineVersion;

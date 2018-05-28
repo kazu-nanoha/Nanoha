@@ -17,15 +17,15 @@ Nanoha, a USI shogi(japanese-chess) playing engine derived from Stockfish, a UCI
 ・Visual Studio Community 2017 で確認しています
 
   1. x64 Native tools Command Prompt for VS 2017を起動します。
-  2. 展開したところにカレントディレクトリを移動します。
+  2. カレントディレクトリをソース展開したところにします。
   3. nmake -f Makefile.vs とすれば、コンパイルできます。
 
-  ※Cygwin でも make とすれば、コンパイルできると思います。
+  ※Cygwin や MSYS2 でも make build とすれば、コンパイルできると思います。
 
 # 使用条件および免責等
-GPLに従います。
+GPL V3に従います。
 
-なのはを再配布するときは、GPLに従って行ってください。 
+なのはを再配布するときは、GPL V3に従って行ってください。 
 バグは内在していると思いますので、ご指摘いただければありがたいです。
  (なるべくやさしくお願いします)
 

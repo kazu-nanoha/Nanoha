@@ -2,7 +2,7 @@
 # Copyright (C) 2004-2008 Tord Romstad (Glaurung author)
 # Copyright (C) 2008-2015 Marco Costalba, Joona Kiiski, Tord Romstad
 # Copyright (C) 2015-2017 Marco Costalba, Joona Kiiski, Gary Linscott, Tord Romstad
-# Copyright (C) 2014-2017 Kazuyuki Kawabata
+# Copyright (C) 2014-2018 Kazuyuki Kawabata
 #
 # Nanoha is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,9 +17,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-EXE = NanohaWCSC27a.exe
-PGD = NanohaWCSC27a.pgd
-PGOLOG = NanohaWCSC27a_prof.txt
+EXE = NanohaWCSC28a.exe
+PGD = NanohaWCSC28a.pgd
+PGOLOG = NanohaWCSC28a_prof.txt
 #EVAL_VER=EVAL_NANO
 #EVAL_OBJ=evaluate.obj
 #EVAL_VER=EVAL_MINI
@@ -64,7 +64,7 @@ OBJS = $(OBJS) SearchMateDFPN.obj
 !ENDIF
 
 #CXXFLAGS=$(FLAGS) /MT /W4 /Wall /nologo /Od /GS /RTCsu
-CXXFLAGS=$(FLAGS) /MD /W3 /nologo /Ox /Ob2 /GS- /Gm /Zi
+CXXFLAGS=$(FLAGS) /MD /W3 /nologo /Ox /Ob2 /GS-
 #CXXFLAGS=$(FLAGS) /MD /W3 /nologo /Od /GS /Gs /Zi /RTCsu
 LDFLAGS=/NOLOGO /STACK:16777216,32768 /out:$(EXE) /LTCG /DEBUG
 PGOLDFLAGS1=/NOLOGO /STACK:33554432,32768 /out:$(EXE) /LTCG:PGI
@@ -76,8 +76,8 @@ all: $(EXE)
 $(EXE) : $(OBJS)
 	$(LD) $(LDFLAGS) $(OBJS) User32.lib
 
-.cpp.obj :
-	$(CC) $(CXXFLAGS) /c $*.cpp
+{}.cpp{}.obj::
+	$(CC) $(CXXFLAGS) /MP /c $<
 
 clean :
 	del /q *.obj

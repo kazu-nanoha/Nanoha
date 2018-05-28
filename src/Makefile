@@ -2,7 +2,7 @@
 # Copyright (C) 2004-2008 Tord Romstad (Glaurung author)
 # Copyright (C) 2008-2015 Marco Costalba, Joona Kiiski, Tord Romstad
 # Copyright (C) 2015-2017 Marco Costalba, Joona Kiiski, Gary Linscott, Tord Romstad
-# Copyright (C) 2014-2017 Kazuyuki Kawabata
+# Copyright (C) 2014-2018 Kazuyuki Kawabata
 #
 # Nanoha is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -85,12 +85,12 @@ OBJS = benchmark.o book.o $(EVAL_OBJ) main.o mate.o mate1ply.o misc.o \
 optimize = yes
 debug = yes
 sanitize = no
-bits = 32
-prefetch = no
+bits = 64
+prefetch = yes
 popcnt = no
-sse = no
+sse = yes
 pext = no
-mate = yes
+mate = no
 
 ### 2.2 Architecture specific
 
@@ -450,7 +450,7 @@ help:
         config-sanity icc-profile-use icc-profile-make gcc-profile-use gcc-profile-make \
         clang-profile-use clang-profile-make
 
-build: config-sanity
+build: #config-sanity
 	$(MAKE) ARCH=$(ARCH) COMP=$(COMP) all
 
 profile-build: config-sanity objclean profileclean
